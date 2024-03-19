@@ -232,12 +232,6 @@
 
 <Route namespace="fishshell" :data='{"path":"/","radar":[{"source":["fishshell.com/"],"target":""}],"name":"Unknown","maintainers":["x2cf"],"url":"fishshell.com/","location":"index.ts"}' />
 
-## Free Computer Books <Site url="freecomputerbooks.com"/>
-
-### Unknown <Site url="freecomputerbooks.com/" size="sm" />
-
-<Route namespace="freecomputerbooks" :data='{"path":"/:category?","radar":[{"source":["freecomputerbooks.com/","freecomputerbooks.com/index.html"],"target":""}],"name":"Unknown","maintainers":[],"url":"freecomputerbooks.com/","location":"index.ts"}' />
-
 ## Futubull 富途牛牛 <Site url="news.futunn.com"/>
 
 ### Unknown <Site url="news.futunn.com/main" size="sm" />
@@ -285,12 +279,6 @@
 ### Unknown <Site url="hackyournews.com/" size="sm" />
 
 <Route namespace="hackyournews" :data='{"path":"/","radar":[{"source":["hackyournews.com/"],"target":""}],"name":"Unknown","maintainers":["ftiasch"],"url":"hackyournews.com/","location":"index.ts"}' />
-
-## HiFeng'Blog <Site url="hicairo.com"/>
-
-### Unknown <Site url="hicairo.com/" size="sm" />
-
-<Route namespace="hicairo" :data='{"path":"/","radar":[{"source":["hicairo.com/"],"target":""}],"name":"Unknown","maintainers":["cnkmmk"],"url":"hicairo.com/","location":"rss.ts"}' />
 
 ## HKJunkCall 資訊中心 <Site url="hkjunkcall.com"/>
 
@@ -1067,12 +1055,6 @@ Refer to [the list of supported currencies](https://wise.com/tools/exchange-rate
 ### Unknown <Site url="globallawreview.org/Magazine/GetIssueContentList" size="sm" />
 
 <Route namespace="globallawreview" :data='{"path":"/","radar":[{"source":["globallawreview.org/Magazine/GetIssueContentList","globallawreview.org/"],"target":""}],"name":"Unknown","maintainers":["nczitzk"],"url":"globallawreview.org/Magazine/GetIssueContentList","location":"index.ts"}' />
-
-## 荒岛 <Site url="lala.im"/>
-
-### Unknown <Site url="lala.im/" size="sm" />
-
-<Route namespace="lala" :data='{"path":"/","radar":[{"source":["lala.im/"],"target":""}],"name":"Unknown","maintainers":["cnkmmk"],"url":"lala.im/","location":"rss.ts"}' />
 
 ## 纪妖 <Site url="cbaigui.com"/>
 

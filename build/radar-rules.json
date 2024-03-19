@@ -4545,8 +4545,8 @@
     "_name": "Free Computer Books",
     ".": [
       {
-        "title": "Unknown",
-        "docs": "https://docs.rsshub.app/routes/other",
+        "title": "Book List",
+        "docs": "https://docs.rsshub.app/routes/reading",
         "source": [
           "/",
           "/index.html"
@@ -5163,7 +5163,7 @@
     "_name": "中国人民银行",
     "rlsbj": [
       {
-        "title": "重庆人事考试通知公告",
+        "title": "重庆市人民政府 人力社保局 - 人事考试通知",
         "docs": "https://docs.rsshub.app/routes/government",
         "source": [
           "/"
@@ -5171,12 +5171,12 @@
         "target": "/gov/chongqing/rsks"
       },
       {
-        "title": "人力社保局",
+        "title": "重庆市人民政府 人力社保局 - 事业单位公开招聘",
         "docs": "https://docs.rsshub.app/routes/government",
         "source": [
           "/"
         ],
-        "target": "/gov/chongqing/sydwgkzp"
+        "target": "/gov/chongqing/sydwgkzp/:year?"
       }
     ]
   },
@@ -5485,6 +5485,19 @@
           "/*"
         ],
         "target": "/gov/sichuan/deyang/mztoday"
+      }
+    ]
+  },
+  "stats.gov.cn": {
+    "_name": "中国人民银行",
+    "www": [
+      {
+        "title": "国家统计局 通用",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/*path"
+        ],
+        "target": "/gov/gov/stats/*path"
       }
     ]
   },
@@ -6037,8 +6050,8 @@
     "_name": "HiFeng'Blog",
     ".": [
       {
-        "title": "Unknown",
-        "docs": "https://docs.rsshub.app/routes/other",
+        "title": "最近发表",
+        "docs": "https://docs.rsshub.app/routes/blog",
         "source": [
           "/"
         ],
@@ -7502,8 +7515,8 @@
     "_name": "荒岛",
     ".": [
       {
-        "title": "Unknown",
-        "docs": "https://docs.rsshub.app/routes/other",
+        "title": "最新发布",
+        "docs": "https://docs.rsshub.app/routes/blog",
         "source": [
           "/"
         ],
@@ -12541,6 +12554,20 @@
       }
     ]
   },
+  "steampowered.com": {
+    "_name": "Steam",
+    "store": [
+      {
+        "title": "Store Search",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/",
+          "/search/:params"
+        ],
+        "target": "/steam/search/:params"
+      }
+    ]
+  },
   "stockedge.com": {
     "_name": "Stock Edge",
     "web": [
@@ -13057,6 +13084,19 @@
           "/"
         ],
         "target": "/tesla/price"
+      }
+    ]
+  },
+  "tgbus.com": {
+    "_name": "电玩巴士 TGBUS",
+    "www": [
+      {
+        "title": "文章列表",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/list/:category/"
+        ],
+        "target": "/tgbus/list/:category"
       }
     ]
   },

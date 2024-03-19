@@ -62,6 +62,12 @@
   username 为博主用户名，而非`xxx.hashnode.dev`中`xxx`所代表的 blog 地址。
   :::
 
+## HiFeng'Blog <Site url="hicairo.com"/>
+
+### 最近发表 <Site url="hicairo.com/" size="sm" />
+
+<Route namespace="hicairo" :data='{"path":"/","categories":["blog"],"example":"/hicairo","radar":[{"source":["hicairo.com/"]}],"name":"最近发表","maintainers":["cnkmmk"],"url":"hicairo.com/","location":"rss.ts"}' />
+
 ## Ian Spriggss <Site url="ianspriggs.com"/>
 
 ### Category <Site url="ianspriggs.com" size="sm" />
@@ -221,6 +227,12 @@ There are many tags, which can be obtained by clicking on a tag from the homepag
 ### 文章 <Site url="www.xunhupay.com/blog" size="sm" />
 
 <Route namespace="xunhupay" :data='{"path":"/blog","categories":["blog"],"example":"/xunhupay/blog","parameters":{},"features":{"requireConfig":false,"requirePuppeteer":false,"antiCrawler":false,"supportBT":false,"supportPodcast":false,"supportScihub":false},"radar":[{"source":["www.xunhupay.com/blog"]}],"name":"文章","maintainers":["Joey"],"url":"www.xunhupay.com/blog","location":"index.ts"}' />
+
+## 荒岛 <Site url="lala.im"/>
+
+### 最新发布 <Site url="lala.im/" size="sm" />
+
+<Route namespace="lala" :data='{"path":"/","categories":["blog"],"example":"/lala","radar":[{"source":["lala.im/"]}],"name":"最新发布","maintainers":["cnkmmk"],"url":"lala.im/","location":"rss.ts"}' />
 
 ## 免費資源網路社群 <Site url="free.com.tw"/>
 

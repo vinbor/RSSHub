@@ -12515,8 +12515,8 @@
   },
   "cs": {
     "routes": {
-      "/:category?": {
-        "path": "/:category?",
+      "/:category{.+}?": {
+        "path": "/:category{.+}?",
         "name": "栏目",
         "parameters": {
           "category": "分类，见下表，默认为首页"
@@ -12571,7 +12571,10 @@
       }
     },
     "name": "中证网",
-    "url": "cs.com.cn"
+    "url": "cs.com.cn",
+    "categories": [
+      "finance"
+    ]
   },
   "csdn": {
     "routes": {
@@ -18959,6 +18962,27 @@
     "routes": {
       "/:category?": {
         "path": "/:category?",
+        "name": "Book List",
+        "url": "freecomputerbooks.com",
+        "maintainers": [
+          "cubroe"
+        ],
+        "example": "/freecomputerbooks/compscAlgorithmBooks",
+        "parameters": {
+          "category": "A category id., which should be the HTML file name (but **without** the `.html` suffix) in the URL path of a book list page."
+        },
+        "categories": [
+          "reading"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
         "radar": [
           {
             "source": [
@@ -18968,9 +18992,6 @@
             "target": ""
           }
         ],
-        "name": "Unknown",
-        "maintainers": [],
-        "url": "freecomputerbooks.com/",
         "location": "index.ts"
       }
     },
@@ -21467,8 +21488,21 @@
       },
       "/chongqing/gzw/:category{.+}?": {
         "path": "/chongqing/gzw/:category{.+}?",
-        "name": "Unknown",
-        "maintainers": [],
+        "parameters": {
+          "category": "分类，见下表，默认为通知公告"
+        },
+        "name": "重庆市人民政府 国有资产监督管理委员会",
+        "url": "gzw.cq.gov.cn",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "radar": [
+          {
+            "source": "gzw.cq.gov.cn/*category",
+            "target": "/chongqing/gzw/*category"
+          }
+        ],
+        "description": "| 通知公告  | 国企资讯 | 国企简介 | 国企招聘 |\n    | --------- | -------- | -------- | -------- |\n    | tzgg_191 | gqdj     | gqjj     | gqzp     |",
         "location": "chongqing/gzw.ts"
       },
       "/chongqing/rsks": {
@@ -21477,15 +21511,6 @@
           "government"
         ],
         "example": "/gov/chongqing/rsks",
-        "parameters": {},
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
         "radar": [
           {
             "source": [
@@ -21493,27 +21518,22 @@
             ]
           }
         ],
-        "name": "重庆人事考试通知公告",
+        "name": "重庆市人民政府 人力社保局 - 人事考试通知",
         "maintainers": [
           "Mai19930513"
         ],
         "url": "rlsbj.cq.gov.cn/",
         "location": "chongqing/rsks.ts"
       },
-      "/chongqing/sydwgkzp": {
-        "path": "/chongqing/sydwgkzp",
+      "/chongqing/sydwgkzp/:year?": {
+        "path": "/chongqing/sydwgkzp/:year?",
+        "url": "rlsbj.cq.gov.cn/",
         "categories": [
           "government"
         ],
         "example": "/gov/chongqing/sydwgkzp",
-        "parameters": {},
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
+        "parameters": {
+          "year": "需要订阅的年份，格式为`YYYY`，必须小于等于当前年份，默认为当前年份"
         },
         "radar": [
           {
@@ -21522,12 +21542,10 @@
             ]
           }
         ],
-        "name": "人力社保局",
+        "name": "重庆市人民政府 人力社保局 - 事业单位公开招聘",
         "maintainers": [
           "MajexH"
         ],
-        "url": "rlsbj.cq.gov.cn/",
-        "description": "#### 人事考试通知 {#chong-qing-shi-ren-min-zheng-fu-ren-li-she-bao-ju-ren-shi-kao-shi-tong-zhi}\n\n\n#### 事业单位公开招聘 {#chong-qing-shi-ren-min-zheng-fu-ren-li-she-bao-ju-shi-ye-dan-wei-gong-kai-zhao-pin}",
         "location": "chongqing/sydwgkzp.ts"
       },
       "/cmse/fxrw": {
@@ -22980,8 +22998,26 @@
       },
       "/stats/*": {
         "path": "/stats/*",
-        "name": "Unknown",
-        "maintainers": [],
+        "name": "国家统计局 通用",
+        "url": "www.stats.gov.cn",
+        "categories": [
+          "government"
+        ],
+        "maintainers": [
+          "bigfei",
+          "nczitzk"
+        ],
+        "example": "/stats/sj/zxfb",
+        "radar": [
+          {
+            "title": "国家统计局 通用",
+            "source": [
+              "www.stats.gov.cn/*path"
+            ],
+            "target": "/gov/stats/*path"
+          }
+        ],
+        "description": "::: tip\n    路径处填写对应页面 URL 中 `http://www.stats.gov.cn/` 后的字段。下面是一个例子。\n\n    若订阅 [数据 > 数据解读](http://www.stats.gov.cn/sj/sjjd/) 则将对应页面 URL `http://www.stats.gov.cn/sj/sjjd/` 中 `http://www.stats.gov.cn/` 后的字段 `sj/sjjd` 作为路径填入。此时路由为 [`/gov/stats/sj/sjjd`](https://rsshub.app/gov/stats/sj/sjjd)\n\n    若订阅 [新闻 > 时政要闻 > 中央精神](http://www.stats.gov.cn/xw/szyw/zyjs/) 则将对应页面 URL `http://www.stats.gov.cn/xw/szyw/zyjs/` 中 `http://www.stats.gov.cn/` 后的字段 `xw/szyw/zyjs` 作为路径填入。此时路由为 [`/gov/stats/xw/szyw/zyjs`](https://rsshub.app/gov/stats/xw/szyw/zyjs)\n    :::",
         "location": "stats/index.ts"
       },
       "/suzhou/doc": {
@@ -24992,15 +25028,18 @@
     "routes": {
       "/": {
         "path": "/",
+        "categories": [
+          "blog"
+        ],
+        "example": "/hicairo",
         "radar": [
           {
             "source": [
               "hicairo.com/"
-            ],
-            "target": ""
+            ]
           }
         ],
-        "name": "Unknown",
+        "name": "最近发表",
         "maintainers": [
           "cnkmmk"
         ],
@@ -31111,15 +31150,18 @@
     "routes": {
       "/": {
         "path": "/",
+        "categories": [
+          "blog"
+        ],
+        "example": "/lala",
         "radar": [
           {
             "source": [
               "lala.im/"
-            ],
-            "target": ""
+            ]
           }
         ],
-        "name": "Unknown",
+        "name": "最新发布",
         "maintainers": [
           "cnkmmk"
         ],
@@ -49958,6 +50000,35 @@
     "name": "中国科技网",
     "url": "digitalpaper.stdaily.com"
   },
+  "steam": {
+    "routes": {
+      "/search/:params": {
+        "path": "/search/:params",
+        "categories": [
+          "game"
+        ],
+        "example": "/steam/search/sort_by=Released_DESC&tags=492&category1=10&os=linux",
+        "parameters": {
+          "params": "Query parameters for a Steam Store search."
+        },
+        "radar": [
+          {
+            "source": [
+              "store.steampowered.com",
+              "store.steampowered.com/search/:params"
+            ]
+          }
+        ],
+        "name": "Store Search",
+        "maintainers": [
+          "moppman"
+        ],
+        "location": "search.ts"
+      }
+    },
+    "name": "Steam",
+    "url": "store.steampowered.com"
+  },
   "stheadline": {
     "routes": {
       "/std/realtime/:category{.+}?": {
@@ -52125,6 +52196,36 @@
     },
     "name": "台灣事實查核中心",
     "url": "tfc-taiwan.org.tw"
+  },
+  "tgbus": {
+    "routes": {
+      "/list/:category": {
+        "path": "/list/:category",
+        "parameters": {
+          "category": "列表分类，见下表"
+        },
+        "categories": [
+          "game"
+        ],
+        "example": "/tgbus/list/news",
+        "radar": [
+          {
+            "source": [
+              "www.tgbus.com/list/:category/"
+            ],
+            "target": "/list/:category"
+          }
+        ],
+        "name": "文章列表",
+        "maintainers": [
+          "Xzonn"
+        ],
+        "description": "| 最新资讯 | 游戏评测 | 游戏视频 | 巴士首页特稿 | 硬件资讯 |\n    | -------- | -------- | -------- | ------------ | -------- |\n    | news     | review   | video    | special      | hardware |",
+        "location": "list.ts"
+      }
+    },
+    "name": "电玩巴士 TGBUS",
+    "url": "tgbus.com"
   },
   "theatlantic": {
     "routes": {
@@ -58547,6 +58648,79 @@
     },
     "name": "盒心光环",
     "url": "xboxfan.com"
+  },
+  "xiaoheihe": {
+    "routes": {
+      "/discount/:platform": {
+        "path": "/discount/:platform",
+        "categories": [
+          "game"
+        ],
+        "example": "/xiaoheihe/discount/pc",
+        "parameters": {
+          "platform": "平台分类，见下表"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "游戏折扣",
+        "maintainers": [
+          "tssujt"
+        ],
+        "description": "| PC  | Switch  | PSN   | Xbox |\n  | ----- | ------ | ----- | ----- |\n  | pc    | switch | psn   | xbox  |",
+        "location": "discount.ts"
+      },
+      "/news": {
+        "path": "/news",
+        "categories": [
+          "game"
+        ],
+        "example": "/xiaoheihe/news",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "游戏新闻",
+        "maintainers": [
+          "tssujt"
+        ],
+        "location": "news.ts"
+      },
+      "/user/:id": {
+        "path": "/user/:id",
+        "categories": [
+          "game"
+        ],
+        "example": "/xiaoheihe/user/30664023",
+        "parameters": {
+          "id": "用户 ID"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "用户动态",
+        "maintainers": [
+          "tssujt"
+        ],
+        "location": "user.ts"
+      }
+    },
+    "name": "小黑盒",
+    "url": "xiaoheihe.cn"
   },
   "xiaohongshu": {
     "routes": {
